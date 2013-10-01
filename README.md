@@ -5,7 +5,7 @@ Project on arduino to remap HID keyboard on a usb hub to a computer to simulate 
 
 extracted informations from the web :
 
- Report :
+= Report : =
 
 |bit   |  value      |
 |:----:|:------------|
@@ -18,7 +18,7 @@ extracted informations from the web :
 | 6    | key 4 value |
 | 7    | key 5 value |
 
-modifiers :
+= Modifiers : =
 
 |bit| KEY     |
 |---|---------|
