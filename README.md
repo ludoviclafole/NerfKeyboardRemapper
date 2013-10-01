@@ -30,3 +30,8 @@ extracted informations from the web :
 |  5  | R SHIFT |
 |  6  | R ALT   |
 |  7  | R GUI   |
+
+### Reprogram Arduino :
+
+* http://arduino.cc/en/Hacking/DFUProgramming8U2
+* http://forums.adafruit.com/viewtopic.php?f=25&t=25146 && http://academic.cleardefinition.com/2012/07/31/using-dfu-programmer-with-an-arduino-uno-r3/
