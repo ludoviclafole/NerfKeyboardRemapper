@@ -38,6 +38,7 @@ extracted informations from the web :
 
 ### Prepare Arduino AT16U2 reprog
 
+```
  wget http://sourceforge.net/projects/dfu-programmer/files/dfu-programmer/0.6.2/dfu-programmer-0.6.2.tar.gz
  tar xzf dfu-programmer-0.6.2.tar.gz
  cd dfu-programmer-0.6.2
@@ -45,11 +46,16 @@ extracted informations from the web :
  ./configure
  make
  sudo make install
+```
 
 #### INSTALLED ^^
 
 ### switch arduino from arduino to keyboard (and revert)
 
+```
  ./toKeyboard.sh
+```
 
+```
  ./toArduino.sh
+```
