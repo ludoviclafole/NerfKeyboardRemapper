@@ -35,3 +35,21 @@ extracted informations from the web :
 
 * http://arduino.cc/en/Hacking/DFUProgramming8U2
 * http://forums.adafruit.com/viewtopic.php?f=25&t=25146 && http://academic.cleardefinition.com/2012/07/31/using-dfu-programmer-with-an-arduino-uno-r3/
+
+### Prepare Arduino AT16U2 reprog
+
+ wget http://sourceforge.net/projects/dfu-programmer/files/dfu-programmer/0.6.2/dfu-programmer-0.6.2.tar.gz
+ tar xzf dfu-programmer-0.6.2.tar.gz
+ cd dfu-programmer-0.6.2
+ ./bootstrap.sh
+ ./configure
+ make
+ sudo make install
+
+#### INSTALLED ^^
+
+### switch arduino from arduino to keyboard (and revert)
+
+ ./toKeyboard.sh
+
+ ./toArduino.sh
