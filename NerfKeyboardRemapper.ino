@@ -28,11 +28,11 @@ uint16_t grr(uint16_t v){
 }
 
 boolean isShifted(uint16_t v){
-  return (v & FORCE_SHIFT);
+  return (v & FORCE_SHIFT) == FORCE_SHIFT;
 }
 
 boolean isGrr(uint16_t v){
-  return (v & FORCE_ALTGR);
+  return (v & FORCE_ALTGR) == FORCE_ALTGR;
 }
 
 uint8_t purify(uint8_t v){
@@ -54,23 +54,24 @@ void printOnScreen(uint8_t *buf,uint8_t line) {
   }
 }
 
-void putKey(uint8_t *buf,uint16_t array[],uint16_t shiftArray[], uint8_t i, uint8_t start) {
+void putKey(uint8_t *buf, uint16_t array[], uint16_t shiftArray[], uint8_t i, uint8_t start) {
+      boolean last = (i == 7) || (buf[i+1] == 0);    
       if(buf[0] & 0x22) {
         uint16_t t = shiftArray[buf[i]-start];
         buf[i] = purify(t);
-        if(isGrr(t)) {
+        if(last && isGrr(t)) {
           buf[0] = buf[0] | GRR;
           buf[0] = buf[0] & UNSHIFT;
-        } else if(isShifted(t)) {
+        } else if(last && isShifted(t)) {
           buf[0] = buf[0] & UNSHIFT;
         }
       } else {
         uint16_t t = array[buf[i]-start];
         buf[i] = purify(t);
-        if(isGrr(t)) {
+        if(last && isGrr(t)) {
           buf[0] = buf[0] | GRR;
           buf[0] = buf[0] & UNSHIFT;
-        } else if(isShifted(t)) {
+        } else if(last && isShifted(t)) {
           buf[0] = buf[0] | SHIFT;
         }
       }
